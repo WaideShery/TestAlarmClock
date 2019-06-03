@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Common BEGIN -->
+    <dimen name="screen_h_padding">16dp</dimen>
+    <dimen name="btn_height">54dp</dimen>
+    <dimen name="btn_corners">27dp</dimen>
+    <dimen name="white_btn_stroke_width">1dp</dimen>
+    <dimen name="btn_text_size">16sp</dimen>
+    <dimen name="til_fix_padding">-12dp</dimen>
+    <dimen name="et_fix_padding">-4dp</dimen>
+    <dimen name="popup_bg_corners">6dp</dimen>
+    <dimen name="fab_bottom_margin">32dp</dimen>
+    <!-- Common END -->
+
+    <!-- Alarm clock list BEGIN -->
+    <dimen name="empty_list_msg_bottom_margin">35dp</dimen>
+    <dimen name="empty_list_msg_text_size">22sp</dimen>
+    <dimen name="alarm_clock_time_left_margin">28dp</dimen>
+    <dimen name="alarm_clock_time_text_size">28sp</dimen>
+    <dimen name="alarm_clock_days_text_size">18sp</dimen>
+    <!-- Alarm clock list END -->
+
+</resources>

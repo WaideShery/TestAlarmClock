@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Test Alarm Clock</string>
+    <string name="create_first_alarm_clock">Create your first alarm clock</string>
+    <string name="create_alarm_clock">Create Alarm Clock</string>
+</resources>

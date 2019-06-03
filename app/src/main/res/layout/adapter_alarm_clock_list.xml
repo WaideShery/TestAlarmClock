@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchState"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:paddingLeft="@dimen/screen_h_padding"
+            android:paddingRight="@dimen/screen_h_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"/>
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/alarm_clock_time_left_margin"
+            android:textColor="@color/alarm_clock_time_text_color"
+            android:textSize="@dimen/alarm_clock_time_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/glVCenter"
+            app:layout_constraintLeft_toRightOf="@id/switchState"
+            tools:text="06:35"/>
+
+        <TextView
+            android:id="@+id/tvDays"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/alarm_clock_days_text_color"
+            android:textSize="@dimen/alarm_clock_days_text_size"
+            app:layout_constraintLeft_toLeftOf="@id/tvTime"
+            app:layout_constraintTop_toTopOf="@id/glVCenter"
+            tools:text="ПН, ВТ, ПТ"/>
+
+        <ImageView
+            android:id="@+id/ivMore"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:paddingLeft="@dimen/screen_h_padding"
+            android:paddingRight="@dimen/screen_h_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/v_ic_more_vert_black"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

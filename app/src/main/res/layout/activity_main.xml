@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.MainActivity">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAlarmClocks"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/adapter_alarm_clock_list"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabNewAlarmClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/screen_h_padding"
+            android:layout_marginBottom="@dimen/fab_bottom_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:srcCompat="@drawable/v_ic_add_white"/>
+
+        <LinearLayout
+            android:id="@+id/layEmptyContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/empty_list_msg_bottom_margin"
+                android:gravity="center_horizontal"
+                android:paddingLeft="@dimen/screen_h_padding"
+                android:paddingRight="@dimen/screen_h_padding"
+                android:text="@string/create_first_alarm_clock"
+                android:textColor="@color/empty_list_msg_text_color"
+                android:textSize="@dimen/empty_list_msg_text_size"/>
+
+            <Button
+                android:id="@+id/btnCreateFirstAlarmClock"
+                style="@style/AppTheme.BlackButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:layout_marginLeft="@dimen/screen_h_padding"
+                android:layout_marginRight="@dimen/screen_h_padding"
+                android:layout_marginBottom="12dp"
+                android:text="@string/create_alarm_clock"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

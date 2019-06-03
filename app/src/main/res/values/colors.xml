@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#232323</color>
+    <color name="colorAuthPrimary">#ffffff</color>
+    <color name="colorAuthPrimaryDark">#000000</color>
+    <color name="colorAccent">#1795D1</color>
+    <color name="colorBackground">#FFFFFF</color>
+
+    <!-- Common BEGIN -->
+    <color name="black_btn_bg_color">#000000</color>
+    <color name="btn_light_text_color">#ffffff</color>
+    <color name="empty_list_msg_text_color">#000000</color>
+    <color name="alarm_clock_time_text_color">#000000</color>
+    <color name="alarm_clock_days_text_color">#000000</color>
+    <!-- Common END -->
+
+</resources>
