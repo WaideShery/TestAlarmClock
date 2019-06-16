@@ -4,6 +4,8 @@ import android.app.Application;
 
 import com.neirx.testalarmclock.app.ThisApp;
 import com.neirx.testalarmclock.di.module.AppComponentModule;
+import com.neirx.testalarmclock.di.module.PresenterModule;
+import com.neirx.testalarmclock.di.module.RepositoryModule;
 import com.neirx.testalarmclock.di.module.RoomModule;
 import com.neirx.testalarmclock.di.module.ViewModule;
 
@@ -19,6 +21,8 @@ import dagger.android.AndroidInjectionModule;
 @Component(modules = {
         AppComponentModule.class,
         AndroidInjectionModule.class,
+        PresenterModule.class,
+        RepositoryModule.class,
         ViewModule.class,
         RoomModule.class})
 @Singleton

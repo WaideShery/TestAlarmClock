@@ -1,5 +1,10 @@
 package com.neirx.testalarmclock.contract.ui;
 
+import com.neirx.testalarmclock.app.error.AppError;
+import com.neirx.testalarmclock.model.AlarmClock;
+
+import java.util.List;
+
 import androidx.lifecycle.LifecycleOwner;
 
 /**
@@ -7,10 +12,11 @@ import androidx.lifecycle.LifecycleOwner;
  */
 public interface MainScreen {
     interface View extends LifecycleOwner {
-
+        void onAlarmClocksLoaded(List<AlarmClock>alarmClocks);
+        void onAlarmClocksLoadedError(AppError appError);
     }
 
     interface Presenter {
-
+        void loadAlarmClocks();
     }
 }
