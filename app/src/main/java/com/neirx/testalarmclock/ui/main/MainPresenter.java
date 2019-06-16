@@ -24,6 +24,7 @@ public class MainPresenter extends Presenter<MainScreen.View>
 
     public MainPresenter(MainScreen.View screen, AlarmClockRepository alarmClockRepository) {
         super(screen, screen);
+        this.alarmClockRepository = alarmClockRepository;
     }
 
     @Override

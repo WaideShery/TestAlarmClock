@@ -4,9 +4,10 @@ import android.app.Activity;
 import android.app.Application;
 import android.app.Service;
 
+import com.neirx.testalarmclock.di.DaggerAppComponent;
+
 import javax.inject.Inject;
 
-import androidx.fragment.app.Fragment;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
@@ -20,6 +21,11 @@ public class ThisApp extends Application  implements HasActivityInjector, HasSer
     @Override
     public void onCreate() {
         super.onCreate();
+
+        DaggerAppComponent.builder()
+                .application(this)
+                .build()
+                .inject(this);
     }
 
     //-------- Dagger injections BEGIN--------
@@ -27,8 +33,6 @@ public class ThisApp extends Application  implements HasActivityInjector, HasSer
     DispatchingAndroidInjector<Activity> activityInjector;
     @Inject
     DispatchingAndroidInjector<Service> serviceInjector;
-    @Inject
-    DispatchingAndroidInjector<Fragment> supportFragmentInjector;
 
     @Override
     public DispatchingAndroidInjector<Activity> activityInjector() {

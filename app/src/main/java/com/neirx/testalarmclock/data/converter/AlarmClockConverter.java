@@ -11,12 +11,14 @@ public class AlarmClockConverter {
     public static AlarmClock convert(AlarmClockEntity entity){
         AlarmClock alarmClock = new AlarmClock();
         alarmClock.setId(entity.getId());
+        alarmClock.setId(entity.getId());
         return alarmClock;
     }
 
     public static AlarmClockEntity convert(AlarmClock alarmClock){
         AlarmClockEntity entity = new AlarmClockEntity();
         entity.setId(alarmClock.getId());
+        entity.setEnabled(alarmClock.isEnabled() ? 1 : 0);
         return entity;
     }
 }

@@ -12,12 +12,25 @@
     <dimen name="fab_bottom_margin">32dp</dimen>
     <!-- Common END -->
 
-    <!-- Alarm clock list BEGIN -->
+    <!-- AlarmClock clock list BEGIN -->
     <dimen name="empty_list_msg_bottom_margin">35dp</dimen>
     <dimen name="empty_list_msg_text_size">22sp</dimen>
     <dimen name="alarm_clock_time_left_margin">28dp</dimen>
     <dimen name="alarm_clock_time_text_size">28sp</dimen>
     <dimen name="alarm_clock_days_text_size">18sp</dimen>
-    <!-- Alarm clock list END -->
+    <!-- AlarmClock clock list END -->
+
+    <!-- Edit alarm clock BEGIN -->
+    <dimen name="time_wheel_width">100dp</dimen>
+    <dimen name="time_text_size">22sp</dimen>
+    <dimen name="time_wheel_stroke_with">1dp</dimen>
+    <dimen name="time_wheel_corners">10dp</dimen>
+    <dimen name="week_day_text_size">14sp</dimen>
+    <dimen name="week_day_checkbox_size">36dp</dimen>
+    <dimen name="calendar_screen_h_padding">40dp</dimen>
+    <dimen name="calendar_screen_reminder_interval_field_corners">4dp</dimen>
+    <dimen name="calendar_screen_reminder_interval_field_height">36dp</dimen>
+    <dimen name="calendar_screen_reminder_interval_field_text_size">18sp</dimen>
+    <!-- Edit alarm clock END -->
 
 </resources>

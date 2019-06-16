@@ -15,4 +15,20 @@
     <color name="alarm_clock_days_text_color">#000000</color>
     <!-- Common END -->
 
+    <!-- Edit alarm clock BEGIN -->
+    <color name="time_text_color">#302F2F</color>
+    <color name="selected_time_text_color">@color/colorAccent</color>
+    <color name="time_wheel_stroke_color">#000000</color>
+    <color name="time_wheel_bg_center_color">#F0F0F0</color>
+    <color name="time_wheel_bg_ends_color">#99F0F0F0</color>
+    <color name="week_day_checked">@color/colorAccent</color>
+    <color name="week_day_unchecked">#EEEEEE</color>
+    <color name="week_day_checked_text_color">#ffffff</color>
+    <color name="week_day_unchecked_text_color">#000000</color>
+    <color name="week_day_text_color">#000000</color>
+    <color name="calendar_screen_reminder_interval_bg">#EEEEEE</color>
+    <color name="mdtp_ic_chevron_color">#767676</color>
+    <color name="mdtp_date_picker_text_normal">#000000</color>
+    <!-- Edit alarm clock END -->
+
 </resources>

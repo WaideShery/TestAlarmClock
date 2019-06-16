@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/screen_h_padding"
+        android:paddingRight="@dimen/screen_h_padding">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_alarm_clock_description"
+            app:layout_constraintBottom_toTopOf="@id/cvTime"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:nextFocusLeft="@id/etDescription"
+                android:nextFocusUp="@id/etDescription"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/time_wheel_corners"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.aigestudio.wheelpicker.WheelPicker
+                    android:id="@+id/hourPicker"
+                    android:layout_width="@dimen/time_wheel_width"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="@id/glVCenter"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:wheel_atmospheric="true"
+                    app:wheel_cyclic="true"
+                    app:wheel_item_text_color="@color/time_text_color"
+                    app:wheel_item_text_size="@dimen/time_text_size"
+                    app:wheel_selected_item_text_color="@color/selected_time_text_color"
+                    app:wheel_visible_item_count="@integer/time_wheel_item_count"
+                    tools:wheel_data="@array/hours"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text=":"
+                    android:textColor="@color/selected_time_text_color"
+                    android:textSize="@dimen/time_text_size"/>
+
+                <com.aigestudio.wheelpicker.WheelPicker
+                    android:id="@+id/minutePicker"
+                    android:layout_width="@dimen/time_wheel_width"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/glVCenter"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:wheel_atmospheric="true"
+                    app:wheel_cyclic="true"
+                    app:wheel_item_text_color="@color/time_text_color"
+                    app:wheel_item_text_size="@dimen/time_text_size"
+                    app:wheel_selected_item_text_color="@color/selected_time_text_color"
+                    app:wheel_visible_item_count="@integer/time_wheel_item_count"
+                    tools:wheel_data="@array/hours"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <FrameLayout
+            android:id="@+id/cvWeek"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/time_wheel_corners"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvTime">
+
+            <include
+                android:id="@+id/week"
+                layout="@layout/view_week"/>
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
