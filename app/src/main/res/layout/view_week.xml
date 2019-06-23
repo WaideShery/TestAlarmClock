@@ -7,6 +7,7 @@
     <data>
 
         <import type="com.neirx.testalarmclock.ui.app_base.binding.WeekBinding"/>
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

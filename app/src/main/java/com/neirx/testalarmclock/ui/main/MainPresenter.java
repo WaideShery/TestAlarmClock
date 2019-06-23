@@ -13,6 +13,7 @@ import java.util.List;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
+import timber.log.Timber;
 
 /**
  * Created by Waide Shery on 03.06.19.
@@ -29,7 +30,8 @@ public class MainPresenter extends Presenter<MainScreen.View>
 
     @Override
     public void loadAlarmClocks() {
-        Disposable disposable = alarmClockRepository.loadAlarmClocks()
+        Timber.tag("TTag").d("loadAlarmClocks()");
+        Disposable disposable = alarmClockRepository.subscribeAlarmClocks()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::handleLoaded,
@@ -38,6 +40,7 @@ public class MainPresenter extends Presenter<MainScreen.View>
     }
 
     private void handleLoaded(Resource<List<AlarmClock>> listResource) {
+        Timber.tag("TTag").d("status: "+listResource.status);
         switch (listResource.status) {
             case SUCCESS:
                 onLoadedSuccessful(listResource.data);
@@ -57,6 +60,7 @@ public class MainPresenter extends Presenter<MainScreen.View>
     }
 
     private void onLoadedError(AppError appError) {
+        Timber.tag("TTag").d("onLoadedError: "+appError.throwable);
         if (screenReady()){
             screen.onAlarmClocksLoadedError(appError);
         }

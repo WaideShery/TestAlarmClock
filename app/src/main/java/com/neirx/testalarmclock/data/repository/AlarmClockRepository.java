@@ -22,6 +22,14 @@ public class AlarmClockRepository {
         this.alarmClockDAO = alarmClockDAO;
     }
 
+    public Observable<Resource<List<AlarmClock>>> subscribeAlarmClocks() {
+        return alarmClockDAO.subscribeAlarmClocks().map(entities -> {
+            List<AlarmClock> list = new ArrayList<>();
+            for (AlarmClockEntity e : entities) list.add(AlarmClockConverter.convert(e));
+            return Resource.success(list);
+        }).toObservable();
+    }
+
     public Observable<Resource<List<AlarmClock>>> loadAlarmClocks() {
         return Single.fromCallable(() -> alarmClockDAO.getAlarmClocks()).map(entities -> {
             List<AlarmClock> list = new ArrayList<>();
@@ -45,5 +53,11 @@ public class AlarmClockRepository {
             alarmClockDAO.deleteAlarmClockById(alarmClock.getId());
             return true;
         }).map(res -> Resource.success(alarmClock)).toObservable();
+    }
+
+    public Observable<Resource<AlarmClock>> getAlarmClockById(long id) {
+        return Single.fromCallable(() -> alarmClockDAO.getAlarmClockById(id))
+                .map(entity -> Resource.success(AlarmClockConverter.convert(entity)))
+                .toObservable();
     }
 }

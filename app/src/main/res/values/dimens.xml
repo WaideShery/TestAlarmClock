@@ -31,6 +31,8 @@
     <dimen name="calendar_screen_reminder_interval_field_corners">4dp</dimen>
     <dimen name="calendar_screen_reminder_interval_field_height">36dp</dimen>
     <dimen name="calendar_screen_reminder_interval_field_text_size">18sp</dimen>
+    <dimen name="once_tomorrow_text_size">18sp</dimen>
+    <dimen name="once_tomorrow_top_margin">15dp</dimen>
     <!-- Edit alarm clock END -->
 
 </resources>

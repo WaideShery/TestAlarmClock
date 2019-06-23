@@ -20,9 +20,15 @@ import androidx.recyclerview.widget.RecyclerView;
  */
 public class AlarmClockAdapter extends RecyclerView.Adapter<AlarmClockAdapter.AlarmClockHolder> {
     private List<AlarmClock> alarmClocks;
+    private DataChangedHandler<AlarmClock> dataChangedHandler;
 
     public AlarmClockAdapter() {
         alarmClocks = new ArrayList<>();
+        dataChangedHandler = new DataChangedHandler<>(this);
+    }
+
+    public void setAlarmClocks(List<AlarmClock> alarms) {
+        dataChangedHandler.onDataChanged(alarmClocks, alarms);
     }
 
     @NonNull

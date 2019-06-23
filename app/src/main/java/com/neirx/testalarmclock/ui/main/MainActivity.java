@@ -7,7 +7,6 @@ import android.view.View;
 import com.neirx.testalarmclock.R;
 import com.neirx.testalarmclock.app.error.AppError;
 import com.neirx.testalarmclock.contract.ui.MainScreen;
-import com.neirx.testalarmclock.databinding.ActivityMainBinding;
 import com.neirx.testalarmclock.model.AlarmClock;
 import com.neirx.testalarmclock.ui.create_alarm.EditAlarmActivity;
 import com.neirx.testalarmclock.ui.main.adapter.AlarmClockAdapter;
@@ -17,12 +16,12 @@ import java.util.List;
 import javax.inject.Inject;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import dagger.android.AndroidInjection;
+import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity implements MainScreen.View{
-    private ActivityMainBinding b;
+    private MainBinding b;
     @Inject
     MainScreen.Presenter presenter;
     private AlarmClockAdapter alarmClockAdapter;
@@ -31,27 +30,30 @@ public class MainActivity extends AppCompatActivity implements MainScreen.View{
     protected void onCreate(Bundle savedInstanceState) {
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
-        b = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        b = new MainBinding(this, R.layout.activity_main);
+        Timber.tag("TTag").d("onCreate()");
 
         alarmClockAdapter = new AlarmClockAdapter();
-        b.rvAlarmClocks.setLayoutManager(new LinearLayoutManager(this));
-        b.rvAlarmClocks.setAdapter(alarmClockAdapter);
+        b.res().rvAlarmClocks.setLayoutManager(new LinearLayoutManager(this));
+        b.res().rvAlarmClocks.setAdapter(alarmClockAdapter);
 
-        b.btnCreateFirstAlarmClock.setOnClickListener(v->createAlarmClock());
-        b.fabNewAlarmClock.setOnClickListener(v-> createAlarmClock());
+        b.res().btnCreateFirstAlarmClock.setOnClickListener(v->createAlarmClock());
+        b.res().fabNewAlarmClock.setOnClickListener(v-> createAlarmClock());
         presenter.loadAlarmClocks();
     }
 
     @Override
     public void onAlarmClocksLoaded(List<AlarmClock> alarmClocks) {
+        Timber.tag("TTag").d("onAlarmClocksLoaded() "+alarmClocks.size());
+        alarmClockAdapter.setAlarmClocks(alarmClocks);
         if (alarmClocks.isEmpty()){
-            b.rvAlarmClocks.setVisibility(View.GONE);
-            b.fabNewAlarmClock.hide();
-            b.layEmptyContent.setVisibility(View.VISIBLE);
+            b.res().rvAlarmClocks.setVisibility(View.GONE);
+            b.res().fabNewAlarmClock.hide();
+            b.res().layEmptyContent.setVisibility(View.VISIBLE);
         } else {
-            b.layEmptyContent.setVisibility(View.GONE);
-            b.rvAlarmClocks.setVisibility(View.VISIBLE);
-            b.fabNewAlarmClock.show();
+            b.res().layEmptyContent.setVisibility(View.GONE);
+            b.res().rvAlarmClocks.setVisibility(View.VISIBLE);
+            b.res().fabNewAlarmClock.show();
         }
     }
 

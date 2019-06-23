@@ -1,6 +1,8 @@
 package com.neirx.testalarmclock.ui.app_base.presenter;
 
 
+import com.neirx.testalarmclock.contract.ui.BasePresenter;
+
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import io.reactivex.disposables.CompositeDisposable;
@@ -9,7 +11,7 @@ import io.reactivex.disposables.Disposable;
 /**
  * Created by Waide Shery on 21.11.2018.
  */
-public abstract class Presenter<T> {
+public abstract class Presenter<T> implements BasePresenter {
     private CompositeDisposable disposables = new CompositeDisposable();
     protected LifecycleOwner lifecycleOwner;
     protected T screen;

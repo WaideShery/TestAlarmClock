@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.app.Service;
 
+import com.neirx.testalarmclock.BuildConfig;
 import com.neirx.testalarmclock.di.DaggerAppComponent;
 
 import javax.inject.Inject;
@@ -12,6 +13,7 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 import dagger.android.HasServiceInjector;
+import timber.log.Timber;
 
 /**
  * Created by Waide Shery on 03.06.19.
@@ -21,6 +23,10 @@ public class ThisApp extends Application  implements HasActivityInjector, HasSer
     @Override
     public void onCreate() {
         super.onCreate();
+
+        if (BuildConfig.DEBUG){
+            Timber.plant(new Timber.DebugTree());
+        }
 
         DaggerAppComponent.builder()
                 .application(this)

@@ -16,7 +16,7 @@ public interface MainScreen {
         void onAlarmClocksLoadedError(AppError appError);
     }
 
-    interface Presenter {
+    interface Presenter  extends BasePresenter{
         void loadAlarmClocks();
     }
 }

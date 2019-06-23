@@ -6,6 +6,7 @@
     <color name="colorAuthPrimaryDark">#000000</color>
     <color name="colorAccent">#1795D1</color>
     <color name="colorBackground">#FFFFFF</color>
+    <color name="colorControl">#FFFFFF</color>
 
     <!-- Common BEGIN -->
     <color name="black_btn_bg_color">#000000</color>

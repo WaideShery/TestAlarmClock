@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Test Alarm Clock</string>
+    <string name="done">Done</string>
     <string name="create_first_alarm_clock">Create your first alarm clock</string>
     <string name="create_alarm_clock">Create Alarm Clock</string>
     <string name="hint_alarm_clock_description">Alarm clock description</string>
+    <string name="delete_alarm_clock_changes">Remove the change?</string>
+    <string name="cancel">Cancel</string>
+    <string name="remove">Remove</string>
+    <string name="one_time_tomorrow">One time tomorrow</string>
 </resources>
